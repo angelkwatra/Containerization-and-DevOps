@@ -18,20 +18,20 @@ fundamentals
     │
     ├── Theory/
     │   ├── README.md
-    │   └── Class-1/
+    │   └── UNIT1/
     │       └── README.md
     │
     └── Lab/
-        └── Lab-1/
+        └── EXPERIMENT1/
             └── README.md
 
 ------------------------------------------------------------------------
 
 ## Theory Section
 
-This section contains class-wise theory notes.
+This section contains unit-wise theory notes.
 
-### Class 1 -- Docker Basics (Hands-on)
+### UNIT 1 -- Docker Basics (Hands-on)
 
 Link to theory index: [Go to Theory README](Theory/README.md)
 
