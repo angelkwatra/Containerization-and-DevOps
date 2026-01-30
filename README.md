@@ -35,7 +35,7 @@ This section contains class-wise theory notes.
 
 Link to theory index: [Go to Theory README](Theory/README.md)
 
-Direct link to Class 1: [Go to Class 1 Notes](Theory/Class-1/README.md)
+Direct link to Class 1: [Go to Class 1 Notes](THEORY/UNIT1/README.md)
 
 ------------------------------------------------------------------------
 
@@ -46,4 +46,4 @@ Direct link to Class 1: [Go to Class 1 Notes](Theory/Class-1/README.md)
 This lab demonstrates the comparison between Virtual Machines and
 Containers using: - VirtualBox - Vagrant - Ubuntu - Docker - Nginx
 
-Lab documentation: [Go to Lab 1 README](Lab/Lab-1/README.md)
+Lab documentation: [Go to Lab 1 README](LAB/EXPERIMENT1/README.md)
