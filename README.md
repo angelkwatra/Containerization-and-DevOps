@@ -31,13 +31,13 @@ fundamentals
 
 ## Theory Section
 
-This section contains unit-wise theory notes.
-
-### UNIT 1 -- Docker Basics (Hands-on)
+This section contains class-wise theory notes.
 
 Link to theory index: [Go to Theory README](./Theory/README.md)
 
-Direct link to Class 1: [Go to Class 1 Notes](./THEORY/Class1/README.md)
+Class 1: [Go to Class 1 Notes](./THEORY/Class1/README.md)
+
+Class 2: [Go to Class 2 Notes](./THEORY/Class2/README.md)
 
 ------------------------------------------------------------------------
 
