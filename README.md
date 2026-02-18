@@ -37,7 +37,7 @@ This section contains unit-wise theory notes.
 
 Link to theory index: [Go to Theory README](./Theory/README.md)
 
-Direct link to Class 1: [Go to Class 1 Notes](./THEORY/UNIT1/README.md)
+Direct link to Class 1: [Go to Class 1 Notes](./THEORY/Class1/README.md)
 
 ------------------------------------------------------------------------
 
