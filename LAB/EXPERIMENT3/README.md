@@ -9,7 +9,7 @@ This experiment is divided into two parts:
 
 ##  Experiment Structure
 
-### 🔹 Part 1 – NGINX with Different Base Images
+### Part 1 – NGINX with Different Base Images
 
 This part includes:
 
@@ -38,7 +38,7 @@ This part includes:
 
 ---
 
-## ✅ Summary
+## Summary
 
 Experiment 3 demonstrates:
 
