@@ -18,12 +18,12 @@ This part includes:
 - Building custom NGINX image using **Alpine base**  
 - Comparing image sizes and layers  
 
-![Open here:](./P1/README.md)  
+[Open here:](./P1/README.md)  
 
 
 ---
 
-### 🔹 Part 2 – Python Flask Web Application
+### Part 2 – Python Flask Web Application
 
 This part includes:
 
@@ -33,7 +33,7 @@ This part includes:
 - Running container with port mapping  
 - Accessing application from browser  
 
-![Open here:](./WebApp/README.md) 
+[Open here:](./WebApp/README.md) 
 
 
 ---
