@@ -45,6 +45,8 @@ Class 2: [Go to Class 2 Notes](./THEORY/Class2/README.md)
 
 ### Lab 1 
 Lab documentation: [Go to Lab 1 README](LAB/EXPERIMENT1/README.md)
+
 Lab documentation: [Go to Lab 2 README](LAB/EXPERIMENT2/README.md)
+
 Lab documentation: [Go to Lab 3 README](LAB/EXPERIMENT3/README.md)
 
