@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  db:
+    build:
+      context: ./database
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      my_ipvlan:
+        ipv4_address: 192.168.2.100
+    restart: always
+
+  backend:
+    build:
+      context: ./backend
+    container_name: fastapi_backend
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+      DB_HOST: db
+      DB_PORT: 5432
+    depends_on:
+      - db
+    networks:
+      my_ipvlan:
+        ipv4_address: 192.168.2.101
+    restart: always
+
+networks:
+  my_ipvlan:
+    driver: ipvlan
+    driver_opts:
+      parent: enp0s1
+      ipvlan_mode: l2
+    ipam:
+      config:
+        - subnet: 192.168.2.0/24
+          gateway: 192.168.2.1
+          ip_range: 192.168.2.96/29
+
+volumes:
+  pgdata:
