@@ -39,15 +39,15 @@ Class 1: [Go to Class 1 Notes](./THEORY/Class1/README.md)
 
 Class 2: [Go to Class 2 Notes](./THEORY/Class2/README.md)
 
-Class 3: [Go to Class 2 Notes](./THEORY/Class3/README.md)
+Class 3: [Go to Class 3 Notes](./THEORY/Class3/README.md)
 
-Class 4: [Go to Class 2 Notes](./THEORY/Class4/README.md)
+Class 4: [Go to Class 4 Notes](./THEORY/Class4/README.md)
 
-Class 5: [Go to Class 2 Notes](./THEORY/Class5/README.md)
+Class 5: [Go to Class 5 Notes](./THEORY/Class5/README.md)
 
-Class 6: [Go to Class 2 Notes](./THEORY/Class6/README.md)
+Class 6: [Go to Class 6 Notes](./THEORY/Class6/README.md)
 
-Class 7: [Go to Class 2 Notes](./THEORY/Class7/README.md)
+Class 7: [Go to Class 7 Notes](./THEORY/Class7/README.md)
 
 ------------------------------------------------------------------------
 
