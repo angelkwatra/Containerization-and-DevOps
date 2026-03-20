@@ -20,65 +20,95 @@
 
 ## Experiment Execution with Screenshots
 
-### 🔹 Step 1: Project Structure
+### 🔹 Step 1: Create Project Directory
 
-Flask app files created.
+```bash
+mkdir WebApp
+cd WebApp
+```
 
-![Step 1](0.png)
+![Step 1 -- Create Project Directory](0.png)
 
 ---
 
 ### 🔹 Step 2: Write Flask Application (app.py)
 
-Basic Flask web app created.
+```python
+from flask import Flask
 
-![Step 2](1.png)
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return """
+        <h1>Experiment 3: Deploying Web Applications with Docker</h1>
+        <h2>Angel- SAP ID: 500119630</h2>
+        <h2>Nakul - SAP ID: 500121882</h2>
+    """
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+```
+
+![Step 2 -- app.py](1.png)
 
 ---
 
 ### 🔹 Step 3: Create requirements.txt
 
-Flask dependency added.
+```text
+flask
+```
 
-![Step 3](2.png)
+![Step 3 -- requirements.txt](2.png)
 
 ---
 
 ### 🔹 Step 4: Write Dockerfile
 
-Dockerfile created for Flask app.
+```dockerfile
+FROM python:3.9-slim
 
-![Step 4](3.png)
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
+```
+
+![Step 4 -- Dockerfile](3.png)
 
 ---
 
 ### 🔹 Step 5: Build Docker Image
 
 ```bash
-docker build -t flask-app .
+docker build -t experiment3-webapp .
 ```
 
-![Step 5](4.png)
+![Step 5 -- Build Image](4.png)
 
 ---
 
-### 🔹 Step 6: Verify Image
+### 🔹 Step 6: Run Container with Port Mapping
 
 ```bash
-docker images
+docker run -d -p 8080:5000 experiment3-webapp
 ```
 
-![Step 6](5.png)
+![Step 6 -- Run Container](5.png)
 
 ---
 
-### 🔹 Step 7: Run Container with Port Mapping
+### 🔹 Step 7: Verify Running Container
 
 ```bash
-docker run -d -p 5000:5000 flask-app
+docker ps
 ```
 
-![Step 7](6.png)
+![Step 7 -- Verify Container](6.png)
 
 ---
 
@@ -86,9 +116,9 @@ docker run -d -p 5000:5000 flask-app
 
 Opened in browser:
 
-http://localhost:5000
+http://localhost:8080
 
-![Step 8](7.png)
+![Step 8 -- Browser Output](7.png)
 
 ---
 

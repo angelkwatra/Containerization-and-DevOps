@@ -16,51 +16,35 @@
 
 ---
 
+## Experiment Execution with Screenshots
+
 # 🔹 Part 1 -- Using Official NGINX Image
 
-### Step 1: Pull Official Image
+### Step 1: Pull, Run and Verify NGINX
 
 ```bash
 docker pull nginx:latest
-```
-
-![Step 1](0.png)
-
----
-
-### Step 2: Run NGINX Container
-
-```bash
 docker run -d --name nginx-official -p 8080:80 nginx
-```
-
-![Step 2](1.png)
-
----
-
-### Step 3: Verify Using curl
-
-```bash
 curl http://localhost:8080
 ```
 
-![Step 3](2.png)
+![Step 1 -- Pull, Run and Verify NGINX](0.png)
 
 ---
 
-### Step 4: Verify Image
+### Step 2: Verify Image
 
 ```bash
 docker images nginx
 ```
 
-![Step 4](3.png)
+![Step 2 -- Verify Image](1.png)
 
 ---
 
 # 🔹 Part 2 -- Build NGINX Using Ubuntu Base
 
-### Step 5: Create Dockerfile (Ubuntu)
+### Step 3: Create Dockerfile (Ubuntu)
 
 ```dockerfile
 FROM ubuntu:22.04
@@ -75,85 +59,103 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-![Step 5](4.png)
+![Step 3 -- Ubuntu Dockerfile](2.png)
 
 ---
 
-### Step 6: Build Image
+### Step 4: Build Image
 
 ```bash
 docker build -t nginx-ubuntu .
 ```
 
-![Step 6](5.png)
+![Step 4 -- Build Ubuntu Image](3.png)
 
 ---
 
-### Step 7: Run Ubuntu-based NGINX
+### Step 5: Run Ubuntu-based NGINX
 
 ```bash
 docker run -d --name nginx-ubuntu -p 8081:80 nginx-ubuntu
 ```
 
-![Step 7](6.png)
+![Step 5 -- Run Ubuntu NGINX](4.png)
 
 ---
 
-### Step 8: Verify Image Size
+### Step 6: Verify Ubuntu Image Size
 
 ```bash
 docker images nginx-ubuntu
 ```
 
-![Step 8](7.png)
+![Step 6 -- Ubuntu Image Size](5.png)
 
 ---
 
 # 🔹 Part 3 -- Build NGINX Using Alpine Base
 
-### Step 9: Dockerfile (Alpine)
-
-```dockerfile
-FROM alpine:latest
-
-RUN apk add --no-cache nginx
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
-```
-
-![Step 9](8.png)
-
----
-
-### Step 10: Build Alpine Image
+### Step 7: Build Alpine Image
 
 ```bash
 docker build -t nginx-alpine .
 ```
 
-![Step 10](9.png)
+![Step 7 -- Build Alpine Image](6.png)
 
 ---
 
-### Step 11: Run Alpine-based NGINX
+### Step 8: Run Alpine-based NGINX
 
 ```bash
 docker run -d --name nginx-alpine -p 8082:80 nginx-alpine
 ```
 
-![Step 11](10.png)
+![Step 8 -- Run Alpine NGINX](7.png)
 
 ---
 
-### Step 12: Compare Image Sizes
+### Step 9: Verify Alpine Image Size
+
+```bash
+docker images nginx-alpine
+```
+
+![Step 9 -- Alpine Image Size](8.png)
+
+---
+
+### Step 10: Compare All Image Sizes
 
 ```bash
 docker images | grep nginx
 ```
 
-![Step 12](11.png)
+![Step 10 -- Compare Image Sizes](9.png)
+
+---
+
+# 🔹 Part 4 -- Custom NGINX Configuration
+
+### Step 11: Create Custom HTML and NGINX Config
+
+```bash
+mkdir html
+# Create custom index.html and nginx configuration
+docker run -d --name nginx-custom -p 8083:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+```
+
+![Step 11 -- Custom NGINX Config](10.png)
+
+---
+
+### Step 12: Run NGINX with Bind Mount
+
+```bash
+docker run -d --name nginx-volume -p 8084:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+```
+
+![Step 12 -- NGINX with Bind Mount](11.png)
 
 ---
 
@@ -163,3 +165,4 @@ docker images | grep nginx
 - Custom Ubuntu-based NGINX image created
 - Custom Alpine-based NGINX image created
 - Compared image sizes and observed Alpine image is significantly smaller
+- Custom NGINX configuration deployed using bind mounts
