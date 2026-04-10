@@ -5,7 +5,7 @@ Deploy and manage a simple Apache-based web server to understand the core concep
 
 ---
 
-## 🚀 Task 1: Deploy a Simple Web Application in a Pod
+## Task 1: Deploy a Simple Web Application in a Pod
 
 **Command Executed:**
 ```bash
@@ -34,7 +34,7 @@ kubectl delete pod apache-pod
 
 ---
 
-## 🔁 Task 2: Convert to a Deployment
+## Task 2: Convert to a Deployment
 
 Deployments provide self-healing and replication features for applications.
 
@@ -53,7 +53,7 @@ kubectl port-forward service/apache 8082:80
 
 ---
 
-## ⚙️ Task 3: Scale the Deployment
+## Task 3: Scale the Deployment
 
 Scaling distributes the load and ensures high availability.
 
@@ -69,7 +69,7 @@ kubectl get pods
 
 ---
 
-## 🐞 Task 4: Debugging Scenario
+## Task 4: Debugging Scenario
 
 Simulating a failure by replacing the image with an incorrect one.
 
@@ -89,7 +89,7 @@ kubectl set image deployment/apache httpd=httpd
 
 ---
 
-## 🧠 Task 5: Explore Inside the Container & Self-Healing
+## Task 5: Explore Inside the Container & Self-Healing
 
 1. **Executing into the container:**
 ```bash
@@ -110,7 +110,7 @@ kubectl get pods -w
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 ```bash
 kubectl delete deployment apache
 kubectl delete service apache
@@ -118,7 +118,7 @@ kubectl delete service apache
 
 ---
 
-## 🔥 Key Insights Gained
+## Key Insights Gained
 
 - **Pod vs Deployment**: Pods are temporary with no recovery. Deployments provide self-healing and are production-ready.
 - **Port Forwarding**: Ideal for debugging, but not for production due to its interactive/blocking network tunnel nature.
