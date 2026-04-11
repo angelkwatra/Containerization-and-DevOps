@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    environment {
+        // ID of credentials created in Jenkins
+        DOCKER_HUB_CRED = 'dockerhub-cred' 
+        // MAKE SURE YOU REPLACE 'yourdockerhubusername' with your actual username
+        IMAGE_NAME = 'yourdockerhubusername/flask-cicd-app'
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                echo 'Cloning from GitHub...'
+                checkout scm
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building Docker Image...'
+                script {
+                    dockImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}", "LAB/EXPERIMENT7/flask-app")
+                }
+            }
+        }
+        
+        stage('Push to Docker Hub') {
+            steps {
+                echo 'Authenticating and Pushing Image to Docker Hub...'
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_HUB_CRED) {
+                        dockImage.push()
+                        dockImage.push('latest')
+                    }
+                }
+            }
+        }
+    }
+}
