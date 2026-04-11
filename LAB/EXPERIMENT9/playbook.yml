@@ -1,0 +1,27 @@
+- name: Configure Managed Nodes
+  hosts: all
+  become: yes 
+  
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        
+    - name: Install required testing software
+      apt:
+        name: 
+          - vim
+          - htop
+          - wget
+        state: present
+        
+    - name: Create a test file
+      file:
+        path: /root/experiment9_success.txt
+        state: touch
+        mode: '0644'
+        
+    - name: Add success message to the file
+      copy:
+        content: "Ansible successfully configured this container!"
+        dest: /root/experiment9_success.txt

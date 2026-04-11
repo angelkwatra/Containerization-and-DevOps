@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  server1:
+    build: .
+    ports:
+      - "2221:22"
+  server2:
+    build: .
+    ports:
+      - "2222:22"
+  server3:
+    build: .
+    ports:
+      - "2223:22"
+  server4:
+    build: .
+    ports:
+      - "2224:22"
