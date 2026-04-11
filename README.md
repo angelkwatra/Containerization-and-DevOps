@@ -43,7 +43,9 @@ Containerization-and-DevOps/
     │   └── WebApp/
     ├── EXPERIMENT4/
     │   └── my-flask-app/
-    └── EXPERIMENT5/
+    ├── EXPERIMENT5/
+    ├── EXPERIMENT6/
+    └── EXPERIMENT7/
 ```
 
 ---
@@ -79,3 +81,5 @@ This section contains class-wise theory notes.
 | Experiment 3 | Deployment & Web Application Containerization | [Go to Experiment 3](./LAB/EXPERIMENT3/README.md) |
 | Experiment 4 | Docker Essentials | [Go to Experiment 4](./LAB/EXPERIMENT4/my-flask-app/README.md) |
 | Experiment 5 | Docker – Volumes, Environment Variables, Monitoring & Networks | [Go to Experiment 5](./LAB/EXPERIMENT5/README.md) |
+| Experiment 6 | Mastering Docker Compose | [Go to Experiment 6](./LAB/EXPERIMENT6/README.md) |
+| Experiment 7 | Complete CI/CD Pipeline using Jenkins, GitHub, and Docker Hub | [Go to Experiment 7](./LAB/EXPERIMENT7/README.md) |
