@@ -17,6 +17,8 @@ We installed Ansible on our macOS (acting as the Control Node). Docker Desktop w
 1. We ran the installation command: `brew install ansible`
 2. Verified the installations: `ansible --version` and `docker --version`
 
+**Screenshot 1:** Terminal showing the successful output of the `ansible --version` command.
+
 ![Screenshot 1](./screenshots/1.png)
 
 ---
@@ -27,6 +29,8 @@ Since Ansible uses SSH to communicate with Managed Nodes, we generated a key pai
 1. We ran: `ssh-keygen -t rsa -b 4096 -N "" -f ./ansible_key`
 *(This created `ansible_key` (private) and `ansible_key.pub` (public) in the current directory.)*
 2. Verified creation by running: `ls -l ansible_key*`
+
+**Screenshot 2:** Terminal showing the `ssh-keygen` execution and the generated key files.
 
 ![Screenshot 2](./screenshots/2.png)
 
@@ -39,27 +43,23 @@ We created a custom Docker image containing Ubuntu, Python (required by Ansible)
 ```dockerfile
 FROM ubuntu:latest
 
-# Install required packages
 RUN apt-get update && apt-get install -y openssh-server python3 sudo
 
-# Set up SSH directory and user permissions
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-# Create ssh directory for root
 RUN mkdir -p /root/.ssh && chmod 700 /root/.ssh
 
-# Copy our generated public key
 COPY ansible_key.pub /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
 
-# Expose SSH port
 EXPOSE 22
 
-# Start SSH daemon
 CMD ["/usr/sbin/sshd", "-D"]
 ```
+
+**Screenshot 3:** IDE showing the contents of the `Dockerfile`.
 
 ![Screenshot 3](./screenshots/3.png)
 
@@ -93,6 +93,8 @@ services:
 2. We built and ran the containers in detached mode: `docker-compose up -d --build`
 3. Verified the running containers: `docker ps`
 
+**Screenshot 4:** Terminal showing the output of `docker-compose up -d --build` and `docker ps` with all 4 servers running and their respective ports mapped.
+
 ![Screenshot 4](./screenshots/4.png)
 
 ---
@@ -115,6 +117,8 @@ ansible_ssh_private_key_file=./ansible_key
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ```
 
+**Screenshot 5:** IDE showing the contents of the `inventory.ini` file.
+
 ![Screenshot 5](./screenshots/5.png)
 
 ---
@@ -123,6 +127,8 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 We verified that Ansible could SSH into all 4 Docker containers and execute python using the `ping` module.
 
 1. We ran: `ansible all -m ping -i inventory.ini`
+
+**Screenshot 6:** Terminal showing "SUCCESS" for server1, server2, server3, and server4, confirming Ansible connectivity.
 
 ![Screenshot 6](./screenshots/6.png)
 
@@ -163,6 +169,8 @@ We wrote a YAML playbook to define our desired state for all the managed nodes.
         dest: /root/experiment9_success.txt
 ```
 
+**Screenshot 7:** IDE showing the contents of the `playbook.yml` file.
+
 ![Screenshot 7](./screenshots/7.png)
 
 ---
@@ -172,6 +180,8 @@ We executed the playbook to configure all 4 nodes simultaneously.
 
 1. We ran: `ansible-playbook -i inventory.ini playbook.yml`
 
+**Screenshot 8:** Terminal showing the playbook execution with `ok` and `changed` statuses representing package updates and file creations.
+
 ![Screenshot 8](./screenshots/8.png)
 
 ---
@@ -180,6 +190,8 @@ We executed the playbook to configure all 4 nodes simultaneously.
 To confirm the playbook successfully applied changes, we used an ad-hoc command to read the generated file directly from all managed servers.
 
 1. We ran: `ansible all -m command -a "cat /root/experiment9_success.txt" -i inventory.ini`
+
+**Screenshot 9:** Terminal showing that all 4 servers successfully returned the string `"Ansible successfully configured this container!"`.
 
 ![Screenshot 9](./screenshots/9.png)
 
@@ -191,5 +203,7 @@ To confirm the playbook successfully applied changes, we used an ad-hoc command 
 Finally, we tore down the environment to free up resources.
 
 1. We stopped and removed the containers using: `docker-compose down`
+
+**Screenshot 10:** Terminal showing the stopping and removing of the servers.
 
 ![Screenshot 10](./screenshots/10.png)
