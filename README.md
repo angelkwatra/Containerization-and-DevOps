@@ -33,6 +33,11 @@ Containerization-and-DevOps/
 │   ├── Class8/
 │   ├── Class9/
 │   ├── Class10/
+│   ├── Class11/
+│   ├── Class12/
+│   ├── Class13/
+│   ├── class14/
+│   ├── Class15/
 │   └── ClassTask/
 │
 └── LAB/
@@ -68,6 +73,11 @@ This section contains class-wise theory notes.
 | Class 8 | [Go to Class 8 Notes](./THEORY/Class8/README.md) |
 | Class 9 | [Go to Class 9 Notes](./THEORY/Class9/README.md) |
 | Class 10 | [Go to Class 10 Notes](./THEORY/Class10/README.md) |
+| Class 11 | [Go to Class 11 Notes](./THEORY/Class11/README.md) |
+| Class 12 | [Go to Class 12 Notes](./THEORY/Class12/README.md) |
+| Class 13 | [Go to Class 13 Notes](./THEORY/Class13/README.md) |
+| Class 14 | [Go to Class 14 Notes](./THEORY/class14/README.md) |
+| Class 15 | [Go to Class 15 Notes](./THEORY/Class15/README.md) |
 | Class Task | [Go to Class Task](./THEORY/ClassTask/README.md) |
 
 ---
