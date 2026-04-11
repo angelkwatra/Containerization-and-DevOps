@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // ID of credentials created in Jenkins
         DOCKER_HUB_CRED = 'dockerhub-cred' 
-        // MAKE SURE YOU REPLACE 'yourdockerhubusername' with your actual username
         IMAGE_NAME = 'angelkwatra/flask-cicd-app'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
