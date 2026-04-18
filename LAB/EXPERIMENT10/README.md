@@ -97,7 +97,3 @@ With the analysis parsed, the project metrics reflect the detected code quality 
 
 2. **Issue Drill-down:** Inspecting the file path line-by-line where SonarQube correctly identifies the division by zero, unused integer, and hardcoded secrets.
    ![Detailed Issues](./7.png)
-
-
-
-
