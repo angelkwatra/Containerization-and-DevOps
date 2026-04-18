@@ -51,7 +51,8 @@ Containerization-and-DevOps/
     ├── EXPERIMENT5/
     ├── EXPERIMENT6/
     ├── EXPERIMENT7/
-    └── EXPERIMENT9/
+    ├── EXPERIMENT9/
+    └── EXPERIMENT10/
 ```
 
 ---
@@ -95,3 +96,4 @@ This section contains class-wise theory notes.
 | Experiment 6 | Mastering Docker Compose | [Go to Experiment 6](./LAB/EXPERIMENT6/README.md) |
 | Experiment 7 | Complete CI/CD Pipeline using Jenkins, GitHub, and Docker Hub | [Go to Experiment 7](./LAB/EXPERIMENT7/README.md) |
 | Experiment 9 | Ansible | [Go to Experiment 9](./LAB/EXPERIMENT9/README.md) |
+| Experiment 10 | Code Quality Analysis using SonarQube | [Go to Experiment 10](./LAB/EXPERIMENT10/README.md) |
