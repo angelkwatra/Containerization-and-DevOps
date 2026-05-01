@@ -18,23 +18,18 @@ This document outlines the steps performed during Experiment 11, which focuses o
 | **Self-healing** | ❌ No | ✅ Yes |
 | **Use case** | Dev/Test | Production |
 
----
 
-##  Practical Steps Guide
-
-Follow these steps manually in your terminal. Take screenshots after each major step and save them in the `screenshots` folder.
 
 ### Step 1: Clean Previous Setup
-Ensure no old containers are running that might conflict with this experiment.
+
 
 1. Run the following commands:
 ```bash
 docker compose down -v
 docker ps
 ```
- *This ensures a clean slate.*
 
-**Screenshot 1:** Terminal showing the cleanup and empty `docker ps` output.
+**Screenshot 1:** 
 ![Screenshot 1](./screenshots/1.png)
 
 ---
@@ -85,7 +80,7 @@ docker ps
 ---
 
 ### Step 5: Access the Application
-Verify that the application is accessible.
+
 
 1. Open your browser and navigate to: [http://localhost:8080](http://localhost:8080)
  *The WordPress installation UI should load.*
@@ -96,7 +91,7 @@ Verify that the application is accessible.
 ---
 
 ### Step 6: Scale the Application
-Demonstrate Swarm's ability to easily scale a service.
+
 
 1. Run the following commands:
 ```bash
@@ -112,7 +107,7 @@ docker ps
 ---
 
 ### Step 7: Test Self-Healing
-Demonstrate Swarm's ability to recover from failures automatically.
+
 
 1. Find a running WordPress container ID and kill it:
 ```bash
@@ -131,7 +126,7 @@ docker service ps wpstack_wordpress
 ---
 
 ### Step 8: Remove Stack & Cleanup
-Tear down the stack and leave the swarm to clean up your environment.
+
 
 1. Run the following commands:
 ```bash
